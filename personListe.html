@@ -38,7 +38,6 @@
                     .modtager {
                         grid-template-columns: repeat(3, 1fr);
                     }
-
     </style>
 </head>
 
@@ -50,8 +49,8 @@
         <template>
             <article class="style">
                 <h2></h2>
-                <h2></h2>
                 <img src="" alt="">
+                <a href=""></a>
             </article>
         </template>
     </section>
@@ -79,19 +78,17 @@
                 personListe.feed.entry.forEach((person) => {
                     const klon = temp.cloneNode(true).content;
                     klon.querySelector("h2").textContent = person.gsx$navn.$t;
-                    klon.querySelector("h2+h2").textContent = person.gsx$github.$t;
+                    klon.querySelector("a").textContent = `https//github.com/${person.gsx$github.$t}`;
+                    klon.querySelector("a").href = `https//github.com/${person.gsx$github.$t}`;
                     klon.querySelector("img").src = person.gsx$billede.$t;
                     modtagerKloner.appendChild(klon);
 
                 })
             }
         }
-
     </script>
 
 
 
 
-</body>
-
-</html>
+</body></html>
